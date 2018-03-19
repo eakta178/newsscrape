@@ -29,12 +29,12 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
     $("#articles").append("<div class='collection'>"+"<a href='#'"+ "class='collection-item'" + "data-id='" + data[i]._id + "'>" + data[i].title + "<br />"
-    + data[i].link + "</a>"+"</div>");
+    + data[i].link +"<a class='waves-effect waves-light btn note' data-id='" + data[i]._id +"'>"+"Add Note</a>"+"</a>"+"</div>");
 
   }
 });
 
-$(document).on("click", ".collection-item", function() {
+$(document).on("click", ".note", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag

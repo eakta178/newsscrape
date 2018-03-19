@@ -51,6 +51,7 @@ app.get("/scrape", function(req, res) {
       db.Article.create(result)
         .then(function(dbArticle) {
           // View the added result in the console
+          var count = dbArticle.length;
           console.log(dbArticle);
         })
         .catch(function(err) {
