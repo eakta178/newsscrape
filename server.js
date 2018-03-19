@@ -60,7 +60,8 @@ app.get("/scrape", function(req, res) {
     });
 
     // If we were able to successfully scrape and save an Article, send a message to the client
-    res.send("Scrape Complete");
+   
+    console.log("Scrape Complete");
     res.redirect("/")
   });
 });
@@ -109,9 +110,10 @@ app.post("/articles/:id", function(req, res) {
 
 // Route for delete an Article's associated Note
 app.delete("/articles/delete/:id", function(req, res) {
+ console.log(req.body);
   db.Note.remove(req.body)
   .then(function(dbNote) {
-    return db.Article.remove({ note: dbNote._id});
+    return db.Article.findOneAndUpdate({ _id : req.params.id},{ note: dbNote._id});
   })
   .then(function(dbArticle) {
     res.json(dbArticle);

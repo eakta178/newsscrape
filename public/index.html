@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  
     <style>
-      body { background-color: #F2F6D0 }
+      body { background-color:#a1887f brown lighten-2;
+        background-image: url("./img/news.jpg"); }
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -37,16 +41,27 @@
     </style>
   </head>
   <body>
-      <button type="button" id="scrape">Scrape New Articles</button>
+      <nav>
+          <div class="nav-wrapper blue-grey">
+            <a href="#" class="brand-logo center">Mongo Scraper</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a href="/scrape" id="scrape">Scrape New Articles</a></li>
+              <li><a href="badges.html">Save Article</a></li>
+            </ul>
+          </div>
+        </nav>
+
     <div id="wrapper">
       
-      <h1>Mongo Scraper</h1>
-      <h2><i>New York Times Edition</i></h2>
      
       <div id="articles"></div>
       <div id="notes"></div>
       
     </div>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+            
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
